@@ -32,8 +32,6 @@ jobs:
           aws-region: ${{env.AWS_REGION}}
       # Upload a file to AWS s3
       - name: CP bucket list to S3
-        id: cp
-        working-directory: test_s3
         run: |
           aws s3 cp ./s3buket s3://${{env.BUCKET_NAME}}/ --recursive
           aws s3 ls s3://${{env.BUCKET_NAME}}/
